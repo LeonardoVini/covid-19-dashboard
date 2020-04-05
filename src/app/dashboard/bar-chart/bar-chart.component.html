@@ -1,0 +1,18 @@
+<div class="bar-chart">
+  <canvas
+    baseChart
+    [datasets]="barChartData"
+    [labels]="barChartLabels"
+    [options]="barChartOptions"
+    [plugins]="barChartPlugins"
+    [legend]="barChartLegend"
+    [chartType]="barChartType">
+  </canvas>
+  <div class="bar-chart-info">
+    <h3>Number of cases and deaths today</h3>
+    <p>Source data from:
+      <a href="https://github.com/novelcovid/api" target="_blank">Novel COVID API</a>
+    </p>
+    <small>Updated at: {{ covid_updated_at | date:'short' }}</small>
+  </div>
+</div>

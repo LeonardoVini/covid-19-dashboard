@@ -1,0 +1,19 @@
+<div class="line-chart">
+  <canvas baseChart
+    [data]="pieChartData"
+    [labels]="pieChartLabels"
+    [chartType]="pieChartType"
+    [options]="pieChartOptions"
+    [plugins]="pieChartPlugins"
+    [colors]="pieChartColors"
+    [legend]="pieChartLegend">
+  </canvas>
+
+  <div class="line-chart-info">
+    <h3>Total number of active cases, recovered and deaths (Total: {{ total }})</h3>
+    <p>Source data from:
+      <a href="https://github.com/novelcovid/api" target="_blank">Novel COVID API</a>
+    </p>
+    <small>Updated at: {{ covid_updated_at | date:'short' }}</small>
+  </div>
+</div>

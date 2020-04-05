@@ -1,0 +1,48 @@
+div.homepage-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+
+  div.content {
+    width: 100%;
+    max-width: 1200px;
+    margin-top: 20px;
+    padding: 0 30px;
+  }
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+table {
+  width: 100%;
+
+  td {
+    vertical-align: middle;
+    align-items: center;
+
+    img {
+      margin-right: 20px;
+      width: 30px;
+    }
+  }
+
+  th.mat-sort-header-sorted {
+    color: black;
+  }
+
+  tr.lines:hover {
+    background: #f0ecec;
+    cursor: pointer;
+  }
+
+  mat-icon {
+    color: red;
+  }
+
+}
+
+

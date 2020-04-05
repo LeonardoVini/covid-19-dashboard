@@ -1,0 +1,52 @@
+<header>
+
+  <div class="navbar-content">
+    <p>Stay at home!</p>
+
+    <!-- <span class="spacier"></span> -->
+
+    <div class="menu-options">
+      <button mat-button [matMenuTriggerFor]="countries">Countries index</button>
+
+      <button mat-button [routerLink]="['/homepage']">Homepage</button>
+      <button mat-button [routerLink]="['']">Logout</button>
+
+      <mat-menu #countries="matMenu">
+        <button mat-menu-item [matMenuTriggerFor]="top_country_cases">Top 10 - Cases</button>
+        <button mat-menu-item [matMenuTriggerFor]="top_country_active">Top 10 - Active</button>
+        <button mat-menu-item [matMenuTriggerFor]="top_country_recovered">Top 10 - Recovered</button>
+        <button mat-menu-item [matMenuTriggerFor]="top_country_deaths">Top 10 - Deaths</button>
+      </mat-menu>
+
+      <mat-menu class="button-container" #top_country_cases="matMenu">
+        <button class="country-button" mat-menu-item *ngFor="let country of top_cases" [routerLink]="['/dashboard', country.country]">
+          <img [src]="country.countryInfo.flag" [alt]="country.country">
+          <span>{{ country.country }}</span>
+        </button>
+      </mat-menu>
+
+      <mat-menu class="button-container" #top_country_active="matMenu">
+        <button class="country-button" mat-menu-item *ngFor="let country of top_active" [routerLink]="['/dashboard', country.country]">
+          <img [src]="country.countryInfo.flag" [alt]="country.country">
+          <span>{{ country.country }}</span>
+        </button>
+      </mat-menu>
+
+      <mat-menu class="button-container" #top_country_recovered="matMenu">
+        <button class="country-button" mat-menu-item *ngFor="let country of top_recovered" [routerLink]="['/dashboard', country.country]">
+          <img [src]="country.countryInfo.flag" [alt]="country.country">
+          <span>{{ country.country }}</span>
+        </button>
+      </mat-menu>
+
+      <mat-menu class="button-container" #top_country_deaths="matMenu">
+        <button class="country-button" mat-menu-item *ngFor="let country of top_deaths" [routerLink]="['/dashboard', country.country]">
+          <img [src]="country.countryInfo.flag" [alt]="country.country">
+          <span>{{ country.country }}</span>
+        </button>
+      </mat-menu>
+
+    </div>
+  </div>
+
+</header>

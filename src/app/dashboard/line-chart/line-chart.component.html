@@ -1,0 +1,26 @@
+<div class="line-chart">
+  <canvas
+    baseChart
+    width="400"
+    height="150"
+    [datasets]="lineChartData"
+    [labels]="lineChartLabels"
+    [options]="lineChartOptions"
+    [colors]="lineChartColors"
+    [legend]="lineChartLegend"
+    [chartType]="lineChartType"
+    [plugins]="lineChartPlugins"
+    (chartHover)="chartHovered($event)"
+    (chartClick)="chartClicked($event)">
+  </canvas>
+
+  <div class="line-chart-infos">
+    <h3>Evolution of the number of {{ data_type }} over the days in {{ country }} (last 30 days)</h3>
+    <p>Source data from:
+      <a href="https://coronavirus.jhu.edu/map.html" target="_blank">
+        Johns Hopkins University & Medicine
+      </a>
+    </p>
+    <small>Updated at: {{ covid_updated_at | date:'short' }}</small>
+  </div>
+</div>

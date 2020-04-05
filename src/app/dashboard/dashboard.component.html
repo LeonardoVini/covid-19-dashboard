@@ -1,0 +1,46 @@
+<app-navbar></app-navbar>
+
+<div class="dashboard-container">
+  <div class="content">
+
+    <div class="bar-pie-charts-container">
+      <covid-19-bar-chart
+        [barChartData]="barChartData"
+        [covid_updated_at]="covid_updated_at">
+      </covid-19-bar-chart>
+
+      <covid-19-pie-chart
+        [pieChartData]="pieChartData"
+        [covid_updated_at]="covid_updated_at">
+      </covid-19-pie-chart>
+    </div>
+
+    <div class="cases-line-chart">
+      <covid-19-line-chart
+        [lineChartData]="lineChartDataCases"
+        [lineChartLabels]="lineChartLabels"
+        [lineChartColor]="'grey'"
+        [covid_updated_at]="covid_updated_at">
+      </covid-19-line-chart>
+    </div>
+
+
+    <div class="recovered-line-chart">
+      <covid-19-line-chart
+        [lineChartData]="lineChartDataRecovered"
+        [lineChartLabels]="lineChartLabels"
+        [lineChartColor]="'green'"
+        [covid_updated_at]="covid_updated_at">
+      </covid-19-line-chart>
+    </div>
+
+    <div class="deaths-line-chart">
+      <covid-19-line-chart
+        [lineChartData]="lineChartDataDeaths"
+        [lineChartLabels]="lineChartLabels"
+        [lineChartColor]="'red'"
+        [covid_updated_at]="covid_updated_at">
+      </covid-19-line-chart>
+    </div>
+    </div>
+</div>
