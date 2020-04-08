@@ -1,0 +1,133 @@
+<app-navbar></app-navbar>
+
+<div class="container">
+  <h1>Coronavirus COVID-19 Global Cases, Deaths and Recovered</h1>
+  <p>
+    Updated at: {{ globalTotals.updated | date:'short' }} -
+    Data source from: <a href="https://coronavirus.jhu.edu/map.html">Johns Hopkins University</a>
+  </p>
+  <mat-grid-list cols="3" rowHeight="100px" gutterSize="20">
+    <mat-grid-tile>
+      <div class="infos">
+        <h4>Total Confirmed Cases</h4>
+        <h1>{{ globalTotals.cases | number:'':'pt' }}</h1>
+      </div>
+    </mat-grid-tile>
+
+    <mat-grid-tile>
+      <div class="infos">
+        <h4>Total Deaths</h4>
+        <h1 [ngStyle]="{'color': 'red'}">{{ globalTotals.deaths | number:'':'pt' }}</h1>
+      </div>
+    </mat-grid-tile>
+
+    <mat-grid-tile>
+      <div class="infos">
+        <h4>Total Recovered</h4>
+        <h1 [ngStyle]="{'color': 'green'}">{{ globalTotals.recovered | number:'':'pt' }}</h1>
+      </div>
+    </mat-grid-tile>
+
+    <mat-grid-tile colspan="3">
+      <div class="infos">
+        <h4>Total Active Cases</h4>
+        <h1>{{ globalTotals.active | number:'':'pt' }}</h1>
+      </div>
+    </mat-grid-tile>
+
+    <mat-grid-tile>
+      <div class="infos">
+        <h4>Total Cases Today</h4>
+        <h1>{{ globalTotals.todayCases | number:'':'pt' }}</h1>
+      </div>
+    </mat-grid-tile>
+
+    <mat-grid-tile>
+      <div class="infos">
+        <h4>Total Deaths Today</h4>
+        <h1 [ngStyle]="{'color': 'red'}">{{ globalTotals.todayDeaths | number:'':'pt' }}</h1>
+      </div>
+    </mat-grid-tile>
+
+    <mat-grid-tile>
+      <div class="infos">
+        <h4>Affected Countries</h4>
+        <h1 [ngStyle]="{'color': 'red'}">{{ globalTotals.affectedCountries | number:'':'pt' }}</h1>
+      </div>
+    </mat-grid-tile>
+
+    <mat-grid-tile rowspan="3">
+      <div class="top-cases infos">
+        <h3>Top 50 - Confirmed Cases</h3>
+
+        <mat-list class="top-list">
+          <div class="top-list-for" *ngFor="let country of top50Cases">
+            <mat-list-item [routerLink]="['/dashboard', country.country]">
+              <img [src]="country.countryInfo.flag" [alt]="country.country">
+              <span>{{ country.country }}</span>
+              <span id="cases">{{ country.cases | number:'':'pt' }}</span>
+            </mat-list-item>
+            <mat-divider></mat-divider>
+          </div>
+        </mat-list>
+      </div>
+    </mat-grid-tile>
+
+    <mat-grid-tile rowspan="3">
+      <div class="top-cases infos">
+        <h3>Top 50 - Deaths</h3>
+
+        <mat-list class="top-list">
+          <div class="top-list-for" *ngFor="let country of top50Deaths">
+            <mat-list-item [routerLink]="['/dashboard', country.country]">
+              <img [src]="country.countryInfo.flag" [alt]="country.country">
+              <span>{{ country.country }}</span>
+              <span [ngStyle]="{'color': 'red'}" id="cases">{{ country.deaths | number:'':'pt' }}</span>
+            </mat-list-item>
+            <mat-divider></mat-divider>
+          </div>
+        </mat-list>
+      </div>
+    </mat-grid-tile>
+
+    <mat-grid-tile rowspan="3">
+      <div class="top-cases infos">
+        <h3>Top 50 - Recovered</h3>
+
+        <mat-list class="top-list">
+          <div class="top-list-for" *ngFor="let country of top50Recovered">
+            <mat-list-item [routerLink]="['/dashboard', country.country]">
+              <img [src]="country.countryInfo.flag" [alt]="country.country">
+              <span>{{ country.country }}</span>
+              <span [ngStyle]="{'color': 'green'}" id="cases">{{ country.recovered | number:'':'pt' }}</span>
+            </mat-list-item>
+            <mat-divider></mat-divider>
+          </div>
+        </mat-list>
+      </div>
+    </mat-grid-tile>
+
+    <mat-grid-tile>
+      <div class="infos">
+        <h4>Cases per 1 Million</h4>
+        <h1>{{ globalTotals.casesPerOneMillion | number:'':'pt' }}</h1>
+      </div>
+    </mat-grid-tile>
+
+    <mat-grid-tile>
+      <div class="infos">
+        <h4>Deaths per 1 Million</h4>
+        <h1 [ngStyle]="{'color': 'red'}">{{ globalTotals.deathsPerOneMillion | number:'':'pt' }}</h1>
+      </div>
+    </mat-grid-tile>
+
+    <mat-grid-tile>
+      <div class="infos">
+        <h4>Tests per 1 Million</h4>
+        <h1 [ngStyle]="{'color': 'green'}">{{ globalTotals.testsPerOneMillion | number:'':'pt' }}</h1>
+      </div>
+    </mat-grid-tile>
+
+  </mat-grid-list>
+</div>
+

@@ -26,3 +26,14 @@ export class CountryResolver implements Resolve<CountryModel> {
     return this.covid19APIService.getCountry(route.params["country"]);
   }
 }
+
+@Injectable({ providedIn: "root" })
+export class GlobalResolver implements Resolve<CountryModel> {
+  constructor(private covid19APIService: Covid19APIService) {}
+
+  resolve(
+    route: ActivatedRouteSnapshot
+  ): Observable<CountryModel> | Promise<CountryModel> | CountryModel {
+    return this.covid19APIService.getGlobalTotals();
+  }
+}

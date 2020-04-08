@@ -8,6 +8,22 @@ div.dashboard-container {
     max-width: 1400px;
     margin-top: 20px;
     padding: 0 30px;
+
+    div.country-infos {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+
+      img {
+        width: 50px;
+        margin-right: 10px;
+      }
+
+      h1 {
+        font-size: 44px;
+      }
+    }
   }
 }
 
@@ -15,6 +31,7 @@ div.bar-pie-charts-container {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  margin-top: 20px;
 
   covid-19-bar-chart {
     width: 100%;

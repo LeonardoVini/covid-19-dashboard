@@ -1,7 +1,14 @@
 <app-navbar></app-navbar>
 
+
 <div class="dashboard-container">
+
+
   <div class="content">
+    <div class="country-infos">
+      <img [src]="country.countryInfo.flag" [alt]="country.country">
+      <h1>{{ country.country }}</h1>
+    </div>
 
     <div class="bar-pie-charts-container">
       <covid-19-bar-chart

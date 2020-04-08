@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { HomepageModule } from './homepage/homepage.module';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { LoginModule } from './login/login.module';
+import { GlobalDashboardModule } from './global-dashboard/global-dashboard.module';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { LoginModule } from './login/login.module';
     BrowserAnimationsModule,
     HomepageModule,
     DashboardModule,
-    LoginModule
+    LoginModule,
+    GlobalDashboardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -42,9 +42,6 @@ export class DashboardComponent implements OnInit {
 
       this.resetValues()
 
-      console.log(this.country)
-      console.log(this.historical)
-
       this.covid_updated_at = this.country.updated
 
       this.setBarChartData()

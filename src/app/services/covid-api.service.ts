@@ -25,4 +25,9 @@ export class Covid19APIService {
     const url: string = `${this.urlAPI}/v2/historical/${country}`
     return this.http.get<HistoricalModel>(url)
   }
+
+  public getGlobalTotals(): Observable<CountryModel> {
+    const url: string = `${this.urlAPI}/all`
+    return this.http.get<CountryModel>(url)
+  }
 }

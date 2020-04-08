@@ -26,7 +26,6 @@ export class NavbarComponent implements OnInit {
   private getCountries(): void {
     this.activatedRoute.data.subscribe((data: Data) => {
       this.countries = data['countries']
-      console.log(this.countries)
       this.setCountriesIndex()
     })
   }

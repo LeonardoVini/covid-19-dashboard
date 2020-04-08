@@ -1,6 +1,6 @@
 export interface CountryModel {
-  country: string
-  countryInfo: CountryInfo
+  country?: string
+  countryInfo?: CountryInfo
   cases: number
   todayCases: number
   deaths: number
@@ -11,6 +11,9 @@ export interface CountryModel {
   casesPerOneMillion: number
   deathsPerOneMillion: number
   updated: number
+  tests?: number
+  testsPerOneMillion?: number
+  affectedCountries?: number
 }
 
 export interface HistoricalModel {

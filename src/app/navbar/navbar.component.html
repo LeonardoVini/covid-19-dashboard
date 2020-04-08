@@ -6,8 +6,9 @@
     <!-- <span class="spacier"></span> -->
 
     <div class="menu-options">
-      <button mat-button [matMenuTriggerFor]="countries">Countries index</button>
+      <button mat-button [routerLink]="['/global']">Global</button>
 
+      <button mat-button [matMenuTriggerFor]="countries">Countries index</button>
       <button mat-button [routerLink]="['/homepage']">Homepage</button>
       <button mat-button [routerLink]="['']">Logout</button>
 
