@@ -12,12 +12,12 @@ export class Covid19APIService {
   constructor(private http: HttpClient) { }
 
   public getCountries(): Observable<CountryModel[]> {
-    const url: string = `${this.urlAPI}/countries`
+    const url: string = `${this.urlAPI}/v2/countries`
     return this.http.get<CountryModel[]>(url)
   }
 
   public getCountry(country: string): Observable<CountryModel> {
-    const url: string = `${this.urlAPI}/countries/${country}`
+    const url: string = `${this.urlAPI}/v2/countries/${country}`
     return this.http.get<CountryModel>(url)
   }
 
