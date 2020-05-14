@@ -128,5 +128,8 @@
       }
     }
   },
-  "defaultProject": "covid19-dashboard"
+  "defaultProject": "covid19-dashboard",
+  "cli": {
+    "analytics": "a2a77c34-20a2-4be2-a2d9-22de680aa3fd"
+  }
 }
